@@ -10,14 +10,15 @@ class Item(BaseModel):
     cpf: str
 
 class ItemResponse(BaseModel):
+    def __str__(self):
+        return f"ItemResponse(idCallback={self.idCallback})"
+
     idCallback: str
     idDatabase: str
     idCampaignAction: str
     answer: Optional[Dict[str, Any]]
 
-
 app = FastAPI()
-
 
 @app.get("/")
 def read_root():
@@ -39,4 +40,12 @@ def recebe_ehalt(item: Item):
         idCampaignAction=item.idCampaignAction,
         answer={"link": "https://luishtml.com/"}
     )
+    print(item_response)
     return item_response
+
+teste = {
+    "idCallback": "12345",
+    "idDatabase": "67890",
+    "idCampaignAction": "abcde",
+    "cpf": "11122233344"
+}
