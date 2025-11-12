@@ -1,8 +1,7 @@
-from typing import Union
+from typing import Optional, Dict, Any
 from fastapi import FastAPI
 import time
 from pydantic import BaseModel
-import json
 
 class Item(BaseModel):
     idCallBack: str
@@ -14,7 +13,7 @@ class ItemResponse(BaseModel):
     idCallBack: str
     idDataBase: str
     idCampaignAction: str
-    answer : json = None
+    Optional[Dict[str, Any]]
 
 
 
