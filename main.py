@@ -40,7 +40,6 @@ def recebe_ehalt(item: Item):
         idCampaignAction=item.idCampaignAction,
         answer={"link": "https://luishtml.com/"}
     )
-    app.logger.info("ItemResponse: %s", item_response)
     print(item_response)
     return item_response
 
