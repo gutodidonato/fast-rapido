@@ -4,17 +4,16 @@ import time
 from pydantic import BaseModel
 
 class Item(BaseModel):
-    idCallBack: str
-    idDataBase: str
+    idCallback: str
+    idDatabase: str
     idCampaignAction: str
     cpf: str
 
 class ItemResponse(BaseModel):
-    idCallBack: str
-    idDataBase: str
+    idCallback: str
+    idDatabase: str
     idCampaignAction: str
-    Optional[Dict[str, Any]]
-
+    answer: Optional[Dict[str, Any]]
 
 
 app = FastAPI()
@@ -33,10 +32,10 @@ def retorna_link():
 
 @app.post("/ehalt")
 def recebe_ehalt(item: Item):
-    time.sleep(2 * 60)
+    time.sleep(1 * 60)
     item_response = ItemResponse(
-        idCallBack=item.idCallBack,
-        idDataBase=item.idDataBase,
+        idCallback=item.idCallback,
+        idDatabase=item.idDatabase,
         idCampaignAction=item.idCampaignAction,
         answer={"link": "https://luishtml.com/"}
     )
