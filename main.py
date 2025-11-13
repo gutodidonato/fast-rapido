@@ -33,7 +33,7 @@ def retorna_link():
 
 @app.post("/ehalt")
 def recebe_ehalt(item: Item):
-    #time.sleep(1 * 60)
+    time.sleep(1 * 60)
     item_response = ItemResponse(
         idCallback=item.idCallback,
         idDatabase=item.idDatabase,
