@@ -33,7 +33,7 @@ def retorna_link():
 
 @app.post("/ehalt")
 def recebe_ehalt(item: Item):
-    time.sleep(1 * 60)
+    #time.sleep(1 * 60)
     item_response = ItemResponse(
         idCallback=item.idCallback,
         idDatabase=item.idDatabase,
@@ -43,9 +43,3 @@ def recebe_ehalt(item: Item):
     print(item_response)
     return item_response
 
-teste = {
-    "idCallback": "12345",
-    "idDatabase": "67890",
-    "idCampaignAction": "abcde",
-    "cpf": "11122233344"
-}
