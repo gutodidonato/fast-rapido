@@ -29,7 +29,7 @@ def read_root():
 @app.get("/link")
 def retorna_link():
     time.sleep(2 * 60)
-    return {"link": "https://luishtml.com/"}
+    return {"link": "https://colmeia.cx/"}
 
 @app.post("/ehalt")
 def recebe_ehalt(item: Item):
@@ -38,7 +38,7 @@ def recebe_ehalt(item: Item):
         idCallback=item.idCallback,
         idDatabase=item.idDatabase,
         idCampaignAction=item.idCampaignAction,
-        answer={"link": "https://luishtml.com/"}
+        answer={"link": "https://colmeia.cx/"}
     )
     print(item_response)
     return item_response
