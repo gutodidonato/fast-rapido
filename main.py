@@ -16,7 +16,7 @@ class ItemResponse(BaseModel):
     idCallback: str
     idDatabase: str
     idCampaignAction: str
-    answer: Optional[Dict[str]]
+    answer: Optional[Dict[str, str]]
 
 app = FastAPI()
 
